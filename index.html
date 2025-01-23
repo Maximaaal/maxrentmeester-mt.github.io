@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Index of /mt-portfolio</title>
+  <style>
+    body {
+      background-color: #ECECEC;
+      font-family: Arial, Helvetica, sans-serif, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      font-size: 18px;
+      background-color: #C0C0C0;
+      margin: 0;
+      padding: 8px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #FFFFFF;
+      border-left: 1px solid #AAAAAA;
+      border-right: 1px solid #AAAAAA;
+      min-height: 10vh;
+      position: relative;
+      padding-bottom: 16px; /* Some spacing above the footer area */
+    }
+    /* Directory Listing Table */
+    #directoryList {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    #directoryList th, #directoryList td {
+      font-size: 14px;
+      text-align: left;
+      padding: 4px 8px;
+      border-bottom: 1px solid #DDDDDD;
+    }
+    #directoryList th {
+      background-color: #F0F0F0;
+    }
+    #directoryList a {
+      color: #0000EE;
+      text-decoration: none;
+    }
+    #directoryList a:hover {
+      text-decoration: underline;
+    }
+    /* Footer with dynamic project details */
+    .footer {
+      font-size: 14px;
+      color: #000000;
+      background-color: #C0C0C0;
+      border-top: 1px solid #999999;
+      padding: 16px;
+    }
+    /* Hidden project content containers inside the footer */
+    .project-content {
+      display: none; /* Hidden by default; shown only when selected */
+      background-color: #FFFFFF;
+      margin-top: 16px;
+      padding: 16px;
+      border: 1px solid #AAAAAA;
+    }
+    .gallery {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .gallery img {
+      width: 500px;
+      height: auto;
+      border: 1px solid #CCCCCC;
+    }
+    .gallery video {
+      width: 500px;
+      height: auto;
+      border: 1px solid #CCCCCC;
+    }
+
+    .close-link {
+      display: inline-block;
+      margin-top: 16px;
+      color: #0000EE;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .close-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <script>
+    function showProject(projectId) {
+      // Hide the default footer text
+      document.getElementById('defaultFooter').style.display = 'none';
+      // Hide any visible project content first
+      let projectSections = document.getElementsByClassName('project-content');
+      for(let i = 0; i < projectSections.length; i++){
+        projectSections[i].style.display = 'none';
+      }
+      // Show the chosen project
+      document.getElementById(projectId).style.display = 'block';
+    }
+
+    function hideProject(projectId) {
+      // Hide the chosen project
+      document.getElementById(projectId).style.display = 'none';
+      // Show the default footer text again
+      document.getElementById('defaultFooter').style.display = 'block';
+    }
+  </script>
+</head>
+<body>
+  <!-- Main Container for Directory Listing -->
+  <div class="container">
+    <h1>Index of /mt-portfolio</h1>
+    <div id="directoryListContainer">
+      <table id="directoryList">
+        <thead>
+          <tr>
+            <th>File</th>
+            <th>Size</th>
+            <th>Last Modified</th>
+            <th>Course</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="index.html">../</a></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+
+          <tr>
+            <td><a href="javascript:void(0)" onclick="showProject('project0')">about/</a></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td><a href="javascript:void(0)" onclick="showProject('project1')">ether/</a></td>
+            <td>2.5 MB</td>
+            <td>2025-01-22 14:30</td>
+            <td>Sound, Space & Interaction</td>
+          </tr>
+          <tr>
+            <td><a href="javascript:void(0)" onclick="showProject('project2')">frag/</a></td>
+            <td>1.2 MB</td>
+            <td>2024-12-15 09:10</td>
+            <td>Creative Programming</td>
+          </tr>
+
+          <tr>
+            <td><a href="javascript:void(0)" onclick="showProject('project3')">daiku/</a></td>
+            <td>752 KB</td>
+            <td>2024-05-27 16:58</td>
+            <td>Computational Creativity</td>
+          </tr>
+
+          <tr>
+            <td><a href="javascript:void(0)" onclick="showProject('project4')">s2e_poster/</a></td>
+            <td>7.1 MB</td>
+            <td>2023-06-10 12:18</td>
+            <td>Science to Experience</td>
+          </tr>
+          
+          <tr>
+            <td><a href="main.pdf">thesis.pdf</a></td>
+            <td>17.8 MB</td>
+            <td>2025-01-06 22:41</td>
+            <td>Thesis</td>
+          </tr>
+
+          <tr>
+            <td><a href="dh.pdf">digital_heritage.pdf</a></td>
+            <td>200 KB</td>
+            <td>2025-01-22 08:45</td>
+            <td>Digital Heritage</td>
+          </tr>
+
+          <tr>
+            <td><a href="strategies.pdf">strategies.pdf</a></td>
+            <td>200 KB</td>
+            <td>2023-03-12 15:32</td>
+            <td>Strategies in Creative and Performing Arts</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Footer area (gray) where project details appear -->
+  <div class="footer">
+    <!-- Default footer text -->
+    <div id="defaultFooter">
+      Click on a project to show its content.
+    </div>
+
+    <!-- Project 1 Content -->
+    <div id="project1" class="project-content">
+      <h2>Etherscape</h2>
+      <p>
+        Etherscape is a behavioral system that interacts with wireless networks into a perceptible and sensory encounter by converting data into audio signals. This allows the user to encounter the intangible networks in urban surround- ings and adds an additional layer to the current physical environment. Using this device, users can explore urban spaces by sensing the strength and variability of wireless signals.
+      </p>
+      <div class="gallery">
+        <img src="img/etherscape.jpg" alt="Project 1 Image 1">
+        <img src="img/etherscape2.jpg" alt="Project 1 Image 2">
+        <img src="img/etherscape3.jpg" alt="Project 1 Image 3">
+
+        <video src="img/etherscape1.mp4" controls></video>
+        <video src="img/etherscape2.mp4" controls></video>
+        <video src="img/etherscape3.mp4" controls></video>
+      </div>
+      <a class="close-link" href="javascript:void(0)" onclick="hideProject('project1')">
+        « Hide Project
+      </a>
+    </div>
+
+    <!-- Project 2 Content -->
+    <div id="project2" class="project-content">
+      <h2>Fragmentation</h2>
+      <p>
+        The fragmentation tool is aimed for graphic designers wanting to bring a bit more dadaism into their designs. Graphic designers are known to be pixel perfect and striving for perfectly kerned typography, this tool will bring some randomness and a good amount of chaos. The main way to interact with the tool and apply distortion will be a rectangular drag selections tool which the user controls with their mouse. The tool will be accompanied with a graphical user interface reminiscing of graphic design tools such as photoshop, illustrator etc. to give the user a sense of familiarity. The main futures of the tool will be displacement, pixelation, and blur. The blur and pixelate tool will give more layered feeling to the overall design by adding more textures.
+      </p>
+      <div class="gallery">
+        <video src="img/fragmentation1.mp4" controls></video>
+        <img src="img/fragmentation1_bg.jpg" alt="Project 1 Image 1">
+        <img src="img/fragmentation2_bg.jpg" alt="Project 1 Image 1">
+        <img src="img/fragmentation3_bg.jpg" alt="Project 1 Image 1">
+        <img src="img/fragmentation4_bg.jpg" alt="Project 1 Image 1">
+      </div>
+      <a class="close-link" href="javascript:void(0)" onclick="hideProject('project2')">
+        « Hide Project
+      </a>
+    </div>
+
+    <div id="project3" class="project-content">
+      <h2>Daiku</h2>
+      <p>
+        Daiku explores the intersection of Dadaist and Haiku poetry through generative methods. Inspired by Hugo Ball’s sound poetry and Tristan Tzara’s cut-up technique, Daiku assembles haikus by selecting phrases from random Wikipedia entries, using syllable-count analysis to ensure adherence to Haiku’s 5-7-5 format. The project incorporates consonant-vowel patterns to refine phonetic consistency and visual coherence across lines. Each generated haiku is paired with abstract visuals created using a Stable Diffusion model, balancing randomness with structured presentation.
+      </p>
+      <div class="gallery">
+        <img src="img/daiku1.jpg" alt="Project 1 Image 1">
+        <img src="img/daiku2.jpg" alt="Project 1 Image 1">
+        <img src="img/daiku3.jpg" alt="Project 1 Image 1">
+        <img src="img/daiku4.jpg" alt="Project 1 Image 1">
+      </div>
+      <a class="close-link" href="javascript:void(0)" onclick="hideProject('project3')">
+        « Hide Project
+      </a>
+    </div>
+
+    <div id="project4" class="project-content">
+      <h2>Pattern</h2>
+      <p>
+        For the 2023 “Pattern” edition of the annual Media Technology exhibition at the V2 lab promotional media was created for both print and social media. The design uses a generated animation made in Processing for the background resembling a possible emergence of a pattern within the noise.
+      </p>
+      <div class="gallery">
+        <img src="img/pattern_thumb.jpg" alt="Project 1 Image 1">
+        <video src="img/pattern1.mp4" controls></video>
+        <video src="img/pattern2.mp4" controls></video>
+      </div>
+      <a class="close-link" href="javascript:void(0)" onclick="hideProject('project4')">
+        « Hide Project
+      </a>
+    </div>
+
+    <div id="project0" class="project-content">
+      <h2>About</h2>
+      <p style="font-size: 20px;">
+        I am a visual and interactive designer based in Rotterdam, specializing in the use of creative technologies to craft immersive and engaging experiences. With a strong foundation in both concept development and hands-on technical execution, I bring ideas to life through fast prototyping and production. By continuously exploring emerging technologies, I create impactful experiences that resonate with audiences from start to finish.
+      </p>
+      <a style="font-size: 20px;" href="https://maxrentmeester.nl">Full Portfolio</a>
+      <div class="gallery">
+        <img src="img/profilepic.jpg" alt="Project 1 Image 1">
+      </div>
+      <a class="close-link" href="javascript:void(0)" onclick="hideProject('project0')">
+        « Hide About
+      </a>
+    </div>
+
+   
+  </div>
+</body>
+</html>
